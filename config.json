@@ -1,0 +1,10 @@
+{
+    "conn_args": {
+        "accessKeyId": "",
+        "accessSecret": ""
+    },
+    "record_args": {
+        "domainName": "domain.name",
+        "RRKeyWord": "test"
+    }
+}
