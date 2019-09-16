@@ -1,7 +1,8 @@
 {
     "conn_args": {
         "accessKeyId": "",
-        "accessSecret": ""
+        "accessSecret": "",
+        "delay": 30
     },
     "record_args": {
         "domainName": "domain.name",

@@ -6,6 +6,7 @@ from parser import Parser
 
 import os
 import time
+import json
 import datetime
 import requests
 
@@ -17,10 +18,20 @@ def ifNetworkConn():
         return False
     return True
 
-
-if __name__ == "__main__":
+def main():
     getip = GetIP()
     parser = Parser()
+    delay = 60
+    dir_path = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(dir_path, 'config.json')
+    with open(file_path) as config_file:
+        config_json = json.loads(config_file.read())
+        delay = config_json.get('conn_args').get('delay')
+        print(delay)
+    
+    if not delay:
+        print('延时填写错误!')
+        exit()
 
     if ifNetworkConn():
         ip = getip.get_ip()
@@ -39,4 +50,8 @@ if __name__ == "__main__":
                 parser.updateRecord()
                 print(now + ' 记录更新成功!')
 
-            time.sleep(60)
+            time.sleep(delay)
+
+
+if __name__ == "__main__":
+    main()

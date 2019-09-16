@@ -17,7 +17,7 @@ class Parser(object):
 
     def __init__(self):
         dir_path = os.path.dirname(os.path.abspath(__file__))
-        file_path = os.path.join(dir_path, 'test_config.json')
+        file_path = os.path.join(dir_path, 'config.json')
 
         with open(file_path) as config_file:
             config_json = json.loads(config_file.read())
