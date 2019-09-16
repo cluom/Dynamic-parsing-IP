@@ -1,6 +1,6 @@
 # **Dynamic-parsing-IP**
 
-> 间隔60秒会判断一次ip变化情况 仅适用于阿里云购买的域名
+> 间隔一段时间会判断一次ip变化情况 仅适用于阿里云购买的域名
 
 ## 项目说明
 
@@ -12,6 +12,7 @@
   * conn_args
     * accessKeyId 阿里云中设置的 [AcessKey](https://usercenter.console.aliyun.com/#/manage/ak)
     * accessSecret 与上面对应的 Secret
+    * delay 设置每次解析ip的时间间隔
   * record_args
     * domainName 设置域名
     * RRKeyWord 设置主机记录
